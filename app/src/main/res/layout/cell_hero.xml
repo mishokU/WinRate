@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="property"
+            type="com.example.winrate.data.remote.openDotaApi.models.HeroProperty" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:backgroundTint="@color/colorDark"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="100dp"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_margin="12dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/heroImage"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/invoker"
+                app:imageUrl="@{property.icon}" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/heroImage">
+
+
+                <LinearLayout
+                    android:id="@+id/mainHeroInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:showDividers="middle"
+                    android:divider="@drawable/empty_divider">
+
+                    <TextView
+                        android:id="@+id/heroName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+                        android:text="@{property.localized_name}"/>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/mainAttributeType"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center_vertical"
+                        app:primaryAttributeSwitcher="@{property.primary_attr}"
+                        android:src="@drawable/intelligence_attribute_symbol"/>
+
+                    <TextView
+                        android:id="@+id/heroAttackType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorWhite"
+                        android:layout_gravity="center_vertical"
+                        android:text="@{property.attack_type}"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/heroAttributes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/mainHeroInfo">
+
+                    <TextView
+                        android:id="@+id/heroAttributesText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorWhite"
+                        android:lines="1"
+                        app:rolesBuilder="@{property.roles}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/heroSkillList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:divider="@drawable/empty_divider"
+                    android:showDividers="middle"
+                    android:layout_below="@id/heroAttributes">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/first_skill"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        app:firstSkill="@{property.name}"
+                        android:src="@drawable/quas_icon"/>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/second_skill"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        app:secondSkill="@{property.name}"
+                        android:src="@drawable/wex_icon"/>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/third_skill"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        app:thirdSkill="@{property.name}"
+                        android:src="@drawable/exort_icon"/>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/fourth_skill"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        app:fourthSkill="@{property.name}"
+                        android:src="@drawable/invoke_icon"/>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/fifth_skill"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        app:fifthSkill="@{property.name}"
+                        android:src="@drawable/unknown_skill_icon"/>
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ultimate_skill"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        app:UltySkill="@{property.name}"
+                        android:src="@drawable/invoke_icon"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
+
+</layout>

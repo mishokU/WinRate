@@ -1,0 +1,95 @@
+<resources>
+    <string name="app_name">WinRate</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="one_field_to_fight">Одно поле боя, неиссякаемые возможности Игра может похвастаться безмерным разнообразием героев, способностей и предметов, благодаря чему каждый матч уникален. Любой герой может исполнять множество ролей, и для каждой нужды найдётся подходящий предмет. Полёт вашей мысли ничто не ограничивает — вы сами выбираете, какой стратегии следовать. «…предлагает больше, чем любая другая игра».  – Eurogamer</string>
+    <string name="pc_gamer">«Эта игра занимает исключительное положение».  – PC Gamer</string>
+    <string name="the_most_popular_game">Самая популярная игра в Steam Ежедневно миллионы игроков по всему миру вступают в битву от лица одного из более сотни героев Dota 2. Неважно, будет это десятый или тысячный час в игре — в ней всегда есть место чему-то новому. Регулярные обновления не дают стоять на месте игровому процессу, возможностям и героям, отчего Dota 2 поистине живёт собственной жизнью.</string>
+    <string name="all_heroes_are_free">Все герои бесплатны Равные соревновательные возможности — главная гордость игры. Чтобы все находились в одинаковом положении, её основа — в частности, обширный список героев — доступна каждому игроку. Если хотите, можете собирать предметы, видоизменяющие как героев, так и мир вокруг них, но всё необходимое для вашего первого матча уже есть в игре. «...бесплатна в том смысле, которого ожидаешь от других бесплатных" игр».
+– IGN</string>
+    <string name="dota2_text">Зовите друзей и играйте вместе Dota многогранна, и она не стоит на месте, но начать игру никогда не поздно. Научитесь основам в матче против ботов. Опробуйте возможности героев. А затем вступайте в битву с игроками вашего уровня и поведения: система подбора матчей позаботится об этом.</string>
+    <string name="play_now">Play Now</string>
+    <string name="masterpiace_game">«СОВРЕМЕННЫЙ МНОГОПОЛЬЗОВАТЕЛЬСКИЙ ШЕДЕВР»</string>
+    <string name="settings">Settings</string>
+    <string name="rate_app">Rate App</string>
+    <string name="invoker_bio">
+        "In its earliest, and some would say most potent form, magic was primarily the art of memory. It required no technology, no wands or appurtenances
+        other than the mind of the magician. All the trappings of ritual were merely mnemonic devices, meant to allow the practitioner to recall in rich detail
+        the specific mental formulae that unlocked a spell's power. The greatest mages in those days were the ones blessed with the greatest memories, and yet so
+        complex were the invocations that all wizards were forced to specialize. The most devoted might hope in a lifetime to have adequate recollection of three
+        spells--four at most. Ordinary wizards were content to know two, and it was not uncommon for a village mage to know only one--with even that requiring
+        him to consult grimoires as an aid against forgetfulness on the rare occasions when he might be called to use it. But among these early practitioners
+        there was one exception, a genius of vast intellect and prodigious memory who came to be known as the Invoker. In his youth, the precocious wizard
+        mastered not four, not five, not even seven incantations: He could command no fewer than ten spells, and cast them instantly. Many more he
+        learned but found useless, and would practice once then purge from his mind forever, to make room for more practical invocations. One such
+        spell was the Sempiternal Cantrap--a longevity spell of such power that those who cast it in the world's first days are among us still
+        (unless they have been crushed to atoms). Most of these quasi-immortals live quietly, afraid to admit their secret: But Invoker
+        is not one to keep his gifts hidden. He is ancient, learned beyond all others, and his mind somehow still has space to contain an
+        immense sense of his own worth...as well as the Invocations with which he amuses himself through the long slow twilight of the world's
+        dying days.","hype":"With an intricate arsenal of spells at his disposal, Invoker can adapt to any battle situation. Each configuration of his
+        three spell components yields of one of ten spells, meaning he's never without a way to destroy or escape his enemies."
+    </string>
+    <string name="invoker">Invoker</string>
+    <string name="refresh">Refresh</string>
+
+
+    <string name="similar_heroes">Similar heroes</string>
+
+    <!-- https://liquipedia.net/dota2/Hero_Roles -->
+
+    <string name="carry">
+        "Will become more useful later in the game if they gain a significant gold advantage."
+        "A Carry is the hero that the team rallies around in the late game. The role's name is derived from the act of "carrying" a team, which is to bear the responsibility of leading the team to victory. The carry is expected to have the largest contribution to the team, and is critical in winning team fights. Carries typically lack early game power, but scale to be stronger in the late game. They are highly dependent on items to be successful. Carries often have a built-in farming mechanism to achieve this. Carries also rely on strong and fast physical attacks, but this is not always the case. Having more than one carry can potentially cause competition within your team for resources, which typically results in a number of underpowered carries. For certain team compositions, it is highly recommended that a team have only one hard carry (a hero with strong carry potential but weaker potential in other roles) and as the game progresses the hard carry will secure the majority of the kills. A semi carry (hero that has a bit less carry potential but stronger potential in other roles) that has gained a big enough gold advantage can also end up being the main damage dealer for the team. Carries are typically sent to the safe lane in the early game with one or more supports to protect them until they are strong enough to farm independently."
+    </string>
+
+    <string name="durable">
+        "Has the ability to last longer in teamfights."
+        "Durable heroes are capable of sustaining large amounts of incoming damage. They tend to have high HP, HP regeneration, healing, magic resistance, or status resistance. They often have abilities to mitigate damage, avoid damage completely, or weaken the power of enemies. Strength heroes are well known to fulfill this role because their primary Strength attribute innately grants HP and magic resistance."
+    </string>
+
+    <string name="disabler">
+        "Has a guaranteed disable for one or more of their spells."
+        "Disablers are heroes with abilities more focused on reliable crowd control, either by single target or area of effect. They can act as initiators in small skirmishes, or as support by holding the enemy down for the carry to finish off."
+    </string>
+
+    <string name="nuker">
+        "Can quickly kill enemy heroes using high damage spells with low cooldowns."
+        "Nukers are heroes with abilities that deliver high burst damage throughout the game. Their goal is to give the team an advantage by killing enemy heroes before they can react to team fights."
+    </string>
+
+    <string name="initiator">
+        "Good at starting a team fight."
+        "Initiators are heroes who can safely start a team fight. These heroes typically have a strong area of effect or special skill to affect the positioning of the enemy team. Usually there is an attempt to quickly eliminate the enemy carry to lure the enemy team, which then initiates a large scale battle. Their abilities often have long cooldowns which are best saved for these large confrontations."
+    </string>
+
+    <string name="escape">
+        "Has the ability to quickly avoid death."
+        "Escape heroes are equipped with one or more escape mechanisms which allow them (and sometimes their allies) to avoid damage while retreating or repositioning themselves during a team fight. Escape mechanisms include movement speed buffs, invisibility, teleportation, and evasion. This is extremely useful for glass cannon heroes who have low hp and deal high damage, because it forces the enemy to change their play style to counter such high mobility."
+    </string>
+
+    <string name="support">
+        "Can focus less on massing gold and items, and more on using their abilities to gain an advantage for the team."
+        "Supports are heroes who keep their allies alive and give them opportunities to earn more gold and experience. Supports will usually come with skills such as healing spells or disables, and generally have low damage output but a powerful (yet situational) nuke. Supports are typically not dependent on items. Most of their gold is spent on items for the benefit of the team, such as an Animal Courier, Observer Wards, or Sentry Wards.
+        Supports are paired with the team's carry at the start of a game. This is because the carry tends to be the weakest and most gold-hungry member of the team. A support should always try to forfeit kills to their team's carry, only securing the kill if none of their allies are able to do it. To protect and help their team control the lane in the early stages of the game is of high importance for a support. They are able to repel enemies and assist in lane survival. Common traits of supports are long range attacks and defensive abilities."
+    </string>
+
+    <string name="pusher">
+        "Can quickly siege and destroy towers and barracks at all points in the game."
+        "Pushers focus on bringing down towers quickly, thereby acquiring map control. If they succeed, they often shut down the enemy carry by forcing them away from farming. They have skills that fortify allied creep waves, summon units, or deal massive amounts of damage to enemy towers."
+    </string>
+
+    <string name="jungler">
+        "Can farm effectively from neutral creeps inside the jungle early in the game."
+        "Junglers can clear neutral camps at the start of the game. This allows for them to farm without interfering with the other lanes, which can allow allies to benefit from soloing their lane more. Junglers have skills that allow them to convert neutral creeps, summon units, or sustain themselves efficiently."
+    </string>
+    <string name="collapse">Collapse</string>
+    <string name="news">News</string>
+    <string name="tourn">Tourn</string>
+    <string name="analysis">Analysis</string>
+    <string name="heroes">Heroes</string>
+    <string name="learn">Learn</string>
+    <string name="at_any_time_you_can_find_your_favorite_hero_and_follow_him">At any time, you can find your favorite hero and follow him</string>
+    <string name="if_you_foll">If you follow eSports, then all the news is also available to you.</string>
+
+</resources>

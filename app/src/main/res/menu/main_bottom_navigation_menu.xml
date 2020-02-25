@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/GameLearn"
+        android:icon="@drawable/book_26px"
+        android:title="@string/learn"/>
+
+    <item
+        android:id="@+id/HeroList"
+        android:icon="@drawable/human_torch_26px"
+        android:title="@string/heroes"/>
+
+    <item
+        android:id="@+id/GamesAnallis"
+        android:icon="@drawable/combo_chart_26px"
+        android:title="@string/analysis"/>
+
+    <item
+        android:id="@+id/DotaNews"
+        android:icon="@drawable/google_news_26px"
+        android:title="@string/news"/>
+
+    <item
+        android:id="@+id/TournamentsList"
+        android:icon="@drawable/world_cup_26px"
+        android:title="@string/tourn"/>
+
+</menu>

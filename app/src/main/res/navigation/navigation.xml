@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/welcomeDotaFragment">
+
+    <fragment
+        android:id="@+id/allHeroesFragment"
+        android:name="com.example.winrate.ui.fragments.AllHeroesFragment"
+        android:label="fragment_all_heroes"
+        tools:layout="@layout/fragment_all_heroes">
+        <action
+            android:id="@+id/action_allHeroesFragment_to_winRateHeroesFragment"
+            app:destination="@id/winRateHeroesFragment" />
+        <action
+            android:id="@+id/action_allHeroesFragment_to_oneHeroFragment"
+            app:destination="@id/oneHeroFragment" />
+        <action
+            android:id="@+id/action_allHeroesFragment_to_analisisGameFragment"
+            app:destination="@id/analisisGameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/oneHeroFragment"
+        android:name="com.example.winrate.ui.fragments.OneHeroFragment"
+        android:label="fragment_one_hero">
+
+        <argument
+            android:name="selectedProperty"
+            app:argType="com.example.winrate.data.remote.openDotaApi.models.HeroProperty" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/winRateHeroesFragment"
+        android:name="com.example.winrate.ui.fragments.WinRateHeroesFragment"
+        android:label="fragment_win_rate_heroes"
+        tools:layout="@layout/fragment_win_rate_heroes">
+        <action
+            android:id="@+id/action_winRateHeroesFragment_to_oneHeroFragment"
+            app:destination="@id/oneHeroFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.winrate.ui.fragments.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_welcomeDotaFragment"
+            app:destination="@id/welcomeDotaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.example.winrate.ui.fragments.LogInFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in">
+        <action
+            android:id="@+id/action_logInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_welcomeDotaFragment"
+            app:destination="@id/welcomeDotaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeDotaFragment"
+        android:name="com.example.winrate.ui.fragments.WelcomeDotaFragment"
+        android:label="fragment_welcome_dota"
+        tools:layout="@layout/fragment_welcome_dota">
+        <action
+            android:id="@+id/action_welcomeDotaFragment_to_allHeroesFragment"
+            app:destination="@id/allHeroesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/analisisGameFragment"
+        android:name="com.example.winrate.ui.fragments.AnalisisGameFragment"
+        android:label="fragment_analisis_game"
+        tools:layout="@layout/fragment_analisis_game" >
+        <action
+            android:id="@+id/action_analisisGameFragment_to_dotaNewsFragment"
+            app:destination="@id/dotaNewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tournamentsFragment"
+        android:name="com.example.winrate.ui.fragments.TournamentsFragment"
+        android:label="fragment_tournaments"
+        tools:layout="@layout/fragment_tournaments" />
+    <fragment
+        android:id="@+id/dotaNewsFragment"
+        android:name="com.example.winrate.ui.fragments.DotaNewsFragment"
+        android:label="fragment_dota_news"
+        tools:layout="@layout/fragment_dota_news" >
+        <action
+            android:id="@+id/action_dotaNewsFragment_to_tournamentsFragment2"
+            app:destination="@id/tournamentsFragment" />
+    </fragment>
+</navigation>

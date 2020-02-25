@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+        <variable
+            name="similarHero"
+            type="com.example.winrate.domain.models.SimilarHeroImg" />
+
+    </data>
+
+    <FrameLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="120dp"
+        android:layout_height="120dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:cardCornerRadius="45dp"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/startBackgroundColor">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/heroImage"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                app:imageUrl="@{similarHero.img_url}"
+                android:src="@drawable/invoker" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </FrameLayout>
+
+
+</layout>

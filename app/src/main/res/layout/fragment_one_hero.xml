@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.winrate.domain.viewmodels.OneHeroViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_gradient">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_gradient_wc">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|enterAlwaysCollapsed|snap">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/hero_full_img"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="16dp"
+                    app:imageUrl="@{viewModel.selectedProperty.img}"
+                    android:src="@drawable/invoker"
+                    android:layout_gravity="center_horizontal"
+                    app:layout_scrollFlags="scroll"
+                    app:layout_anchor="@id/hero_data_container"
+                    app:layout_anchorGravity="top|center_horizontal"/>
+
+                <RelativeLayout
+                    android:id="@+id/hero_data_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_anchorGravity="bottom|center_horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/hero_main_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:showDividers="middle"
+                        android:layout_centerHorizontal="true"
+                        android:divider="@drawable/empty_divider">
+
+                        <TextView
+                            android:id="@+id/hero_full_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp"
+                            android:layout_weight="1"
+                            android:text="@{viewModel.selectedProperty.localized_name}"/>
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/mainAttributeType"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            app:primaryAttributeSwitcher="@{viewModel.selectedProperty.primary_attr}"
+                            android:src="@drawable/intelligence_attribute_symbol"/>
+
+                        <TextView
+                            android:id="@+id/heroAttackType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorWhite"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="18sp"
+                            android:layout_weight="1"
+                            android:text="Range"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/icons_place"
+                        android:layout_width="match_parent"
+                        android:layout_below="@id/hero_main_info"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:layout_alignParentBottom="true"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/attack_icon"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_margin="16dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/overviewicon_attack" />
+
+                        <TextView
+                            android:id="@+id/base_attack_min"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{String.valueOf(viewModel.selectedProperty.base_attack_min)}"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/plus_attack_min"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" - "
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/base_attack_max"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{String.valueOf(viewModel.selectedProperty.base_attack_max)}"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/speed_icon"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_margin="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/overviewicon_speed" />
+
+                        <TextView
+                            android:id="@+id/hero_full_speed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{String.valueOf(viewModel.selectedProperty.move_speed)}"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+
+                        <ImageView
+                            android:id="@+id/shield_icon"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/overviewicon_defense" />
+
+                        <TextView
+                            android:id="@+id/hero_full_armor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:textViewDouble="@{viewModel.selectedProperty.base_armor}"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/_place"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/intelligence_icon"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_margin="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/agility_attribute_symbol" />
+
+                        <TextView
+                            android:id="@+id/base_hero_agility"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{String.valueOf(viewModel.selectedProperty.base_agi)}"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/plus_hero_agility"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" + "
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/gain_hero_agility"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:textViewDouble="@{viewModel.selectedProperty.agi_gain}"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/strenght_icon"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_margin="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/strength_attribute_symbol" />
+
+                        <TextView
+                            android:id="@+id/base_hero_strength"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{String.valueOf(viewModel.selectedProperty.base_str)}"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/plus_hero_strength"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" + "
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/gain_hero_strength"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:textViewDouble="@{viewModel.selectedProperty.str_gain}"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/agility_icon"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_margin="10dp"
+                            android:scaleType="fitCenter"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/intelligence_attribute_symbol" />
+
+                        <TextView
+                            android:id="@+id/base_hero_intellect"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:textViewDouble="@{viewModel.selectedProperty.base_int}"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/plus_hero_intellect"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" + "
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/gain_hero_intellect"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:textViewDouble="@{viewModel.selectedProperty.int_gain}"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="6dp"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Bio"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorWhite"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp">
+
+                            <TextView
+                                android:id="@+id/one_hero_bio_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lines="3"
+                                android:ellipsize="end"
+                                android:onClick="@{() -> viewModel.expandHeroBio()}"
+                                android:textColor="@color/colorWhite"
+                                android:text="@{viewModel.heroBio}"/>
+
+                            <ProgressBar
+                                android:id="@+id/progress_one_hero_bio_loading"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:visibility="@{viewModel.stateProgress()}"
+                                android:indeterminateTint="@color/colorLightBlue"
+                                android:progress="@android:integer/config_mediumAnimTime"/>
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/base_place"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/health_hero_place"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true">
+
+                            <ImageView
+                                android:id="@+id/health_hero_icon"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_gravity="center"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/health_book_48px" />
+
+                            <TextView
+                                android:id="@+id/base_hero_health"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:textViewDouble="@{viewModel.selectedProperty.base_health}"
+                                android:layout_gravity="center"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/plus_hero_health"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" + "
+                                android:layout_gravity="center"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/gain_hero_health"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:textViewDouble="@{viewModel.selectedProperty.base_health_regen}"
+                                android:layout_gravity="center"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/mana_hero_place"
+                            android:layout_width="wrap_content"
+                            android:layout_toEndOf="@id/health_hero_place"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/mana_hero_icon"
+                                android:layout_width="28dp"
+                                android:layout_height="32dp"
+                                android:layout_gravity="center"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/mana_48px" />
+
+                            <TextView
+                                android:id="@+id/base_hero_mana"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:textViewDouble="@{viewModel.selectedProperty.base_mana}"
+                                android:layout_marginStart="4dp"
+                                android:layout_gravity="center"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/plus_hero_mana"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" + "
+                                android:layout_gravity="center"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/gain_hero_mana"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:textViewDouble="@{viewModel.selectedProperty.base_mana_regen}"
+                                android:layout_gravity="center"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_toEndOf="@id/mana_hero_place"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/legs_hero_icon"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/legs_in_boots_32px" />
+
+                            <TextView
+                                android:id="@+id/hero_full_legs"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{String.valueOf(viewModel.selectedProperty.legs)}"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="18sp" />
+
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="16dp"
+                        app:layout_anchor="@id/hero_data_container">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Roles"
+                                android:textSize="18sp"
+                                android:textColor="@color/colorWhite"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Expand roles"
+                                android:textSize="14sp"
+                                android:paddingStart="5dp"
+                                android:paddingEnd="5dp"
+                                android:layout_alignParentBottom="true"
+                                android:onClick="@{() -> viewModel.expandFullRole()}"
+                                android:layout_alignParentEnd="true"
+                                android:textColor="@color/colorWhite"
+                                android:alpha=".5"/>
+
+                        </RelativeLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/roles_recycler_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            android:orientation="horizontal"
+                            tools:listitem="@layout/cell_role"
+                            tools:itemCount="4"
+                            app:listRolesData="@{viewModel.heroRoles}" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/full_roles_recycler_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            app:listFullRolesData="@{viewModel.fullRoleList}"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                        <TextView
+                            android:id="@+id/collapse_full_roles"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/collapse"
+                            android:textColor="@color/colorWhite"
+                            android:visibility="gone"
+                            android:onClick="@{() -> viewModel.expandFullRole()}"
+                            android:alpha=".5"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:layout_gravity="end"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="8dp"
+                        app:layout_anchor="@id/hero_data_container">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Additional information"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorWhite"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true">
+
+                                <ImageView
+                                    android:id="@+id/attack_range_hero_icon"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/radar_80px"
+                                    app:showTextHelper="@{viewModel.attackRange}"/>
+
+                                <TextView
+                                    android:id="@+id/hero_attack_range"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:textViewDouble="@{viewModel.selectedProperty.attack_range}"
+                                    android:layout_margin="5dp"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginEnd="6dp"
+                                android:layout_centerVertical="true">
+
+                                <ImageView
+                                    android:id="@+id/turn_rate_hero_icon"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:scaleType="centerCrop"
+                                    app:showTextHelper="@{viewModel.turnRate}"
+                                    android:src="@drawable/rotate_right_64px" />
+
+                                <TextView
+                                    android:id="@+id/hero_turn_rate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:textViewDouble="@{viewModel.selectedProperty.turn_rate}"
+                                    android:layout_margin="5dp"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentEnd="true">
+
+                                <ImageView
+                                    android:id="@+id/cm_hero_icon"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:scaleType="centerCrop"
+                                    app:showTextHelper="@{viewModel.inCm}"
+                                    android:src="@drawable/cap_50px" />
+
+                                <TextView
+                                    android:id="@+id/hero_cm_enabled"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:textViewBool="@{viewModel.selectedProperty.cm_enabled}"
+                                    android:layout_margin="5dp"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
