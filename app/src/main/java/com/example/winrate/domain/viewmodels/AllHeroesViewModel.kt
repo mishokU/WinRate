@@ -21,6 +21,8 @@ class AllHeroesViewModel(
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
+    var listResult: List<HeroProperty> ?= null
+
     //Room heroes database
     val heroes = database.getAllHeroes()
 
@@ -37,8 +39,6 @@ class AllHeroesViewModel(
         get() = _navigateToSelectedHero
 
 
-
-
     init {
         Log.i("AllHeroesViewModel", "Created!")
         getAllHeroes()
@@ -49,8 +49,8 @@ class AllHeroesViewModel(
             val getPropertiesDiffered = HeroesApi.retrofitService.getHeroesAsync()
             try {
                 _status.value = HeroApiStatus.LOADING.toString() + " - almost done!"
-                val listResult = getPropertiesDiffered.await()
-                if(listResult.isNotEmpty()){
+                listResult = getPropertiesDiffered.await()
+                if(listResult!!.isNotEmpty()){
                     _properties.value = listResult
                     _status.value = HeroApiStatus.DONE.toString() + " - now you can see all heroes!"
                 }

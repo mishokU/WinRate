@@ -11,6 +11,7 @@
         android:name="com.example.winrate.ui.fragments.AllHeroesFragment"
         android:label="fragment_all_heroes"
         tools:layout="@layout/fragment_all_heroes">
+
         <action
             android:id="@+id/action_allHeroesFragment_to_winRateHeroesFragment"
             app:destination="@id/winRateHeroesFragment" />
@@ -20,6 +21,9 @@
         <action
             android:id="@+id/action_allHeroesFragment_to_analisisGameFragment"
             app:destination="@id/analisisGameFragment" />
+        <action
+            android:id="@+id/action_allHeroesFragment_to_searchHeroesFragment"
+            app:destination="@id/searchHeroesFragment" />
     </fragment>
 
     <fragment
@@ -94,4 +98,9 @@
             android:id="@+id/action_dotaNewsFragment_to_tournamentsFragment2"
             app:destination="@id/tournamentsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/searchHeroesFragment"
+        android:name="com.example.winrate.ui.fragments.SearchHeroesFragment"
+        android:label="fragment_search_heroes"
+        tools:layout="@layout/fragment_search_heroes" />
 </navigation>

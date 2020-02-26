@@ -38,6 +38,7 @@ fun bindFullRolesRecyclerView(recyclerView: RecyclerView, data: List<SingleRole>
 
 
 
+
 @BindingAdapter("heroesApiStatus")
 fun bindStatus(statusImageView: ImageView, status: HeroApiStatus){
     when(status){

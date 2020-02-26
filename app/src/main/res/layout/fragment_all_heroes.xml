@@ -71,6 +71,7 @@
             android:layout_gravity="end|bottom"
             android:layout_margin="16dp"
             android:background="@null"
+            android:visibility="gone"
             android:backgroundTint="@color/colorLightRed"
             app:fabSize="mini"
             app:tint="@color/colorWhite"

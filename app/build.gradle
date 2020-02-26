@@ -67,22 +67,14 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version_kotlin_coroutines"
     implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$version_retrofit_coroutines_adapter"
 
-    //Glide
-    def version_glide = '4.11.0'
-    implementation "com.github.bumptech.glide:glide:$version_glide"
-
     //Picasso
     def picassoVer = '2.71828'
     implementation "com.squareup.picasso:picasso:$picassoVer"
     implementation 'androidx.navigation:navigation-fragment-ktx:2.2.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.2.1'
 
-
     //Circle image view
     implementation 'de.hdodenhof:circleimageview:3.1.0'
-
-    //jsoap
-    implementation 'org.jsoup:jsoup:1.12.2'
 
     //Youtube video player
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
@@ -90,4 +82,11 @@ dependencies {
     implementation "com.google.android.material:material:1.1.0-beta01"
 
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
+
+    //RxAndroid
+
+    // RxJava3
+    implementation  'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    implementation  'io.reactivex.rxjava2:rxjava:2.2.10'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 }

@@ -7,11 +7,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.winrate.R
 import com.example.winrate.data.local.database.HeroesDatabase
+import com.example.winrate.data.remote.openDotaApi.models.HeroProperty
 import com.example.winrate.databinding.FragmentAllHeroesBinding
 import com.example.winrate.domain.viewmodels.AllHeroesViewModel
 import com.example.winrate.domain.viewmodels.MainActivityViewModel
@@ -39,12 +41,14 @@ class AllHeroesFragment : Fragment() {
         createCoroutine()
         createViewModel()
         initFab()
+
         return binding.root
     }
 
     private fun initFab() {
         binding.searchHeroFab.setOnClickListener {
-            //this.findNavController().navigate(R.id.sear)
+            val bundle = bundleOf("heroes" to allHeroesViewModel.properties.value)
+            this.findNavController().navigate(R.id.searchHeroesFragment, bundle)
         }
     }
 
@@ -91,6 +95,7 @@ class AllHeroesFragment : Fragment() {
                 it.contains("DONE") -> {
                     binding.refreshAllHeroesData.visibility = View.INVISIBLE
                     binding.responce.visibility = View.INVISIBLE
+                    binding.searchHeroFab.visibility = View.VISIBLE
                 }
                 it.contains("ERROR") -> {
                     binding.responce.setTextColor(resources.getColor(R.color.colorLightRed))
